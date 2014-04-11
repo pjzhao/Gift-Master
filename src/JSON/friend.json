@@ -1,0 +1,23 @@
+[
+{
+	"userid": "0001",
+	"username": "Sanjana",
+	"picUrl": "images/sanjana.jpg",
+	"gender": "F",
+	"age": 24
+},
+{
+	"userid": "0002",
+	"username": "Marjan",
+	"picUrl": "images/marjan.jpg",
+	"gender": "F",
+	"age": 24
+},
+{
+	"userid": "0003",
+	"username": "Prashant",
+	"picUrl": "images/prashant.jpg",
+	"gender": "M",
+	"age": 24
+}
+]

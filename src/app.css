@@ -1,3 +1,61 @@
 .ui-content .ui-listview, .ui-panel-inner > .ui-listview {
 	margin-top: 0px;
 } 
+
+nav span {
+	text-align: center;
+}
+
+.welcome-bar {
+	font-size: 16px;
+}
+
+#hello {
+	text-align: right;
+}
+
+#hello i {
+	margin-left: 10px;
+}
+
+#hello .ion-log-out {
+	margin-right: 30px;
+}
+
+.top-gift-container img {
+	max-width: 100%;
+}
+
+.head * {
+	font-weight: bold;
+}
+
+.head *, .foot * {
+	color: white;
+}
+
+.foot a {
+	text-decoration: none;
+}
+
+.foot h4 a.ui-link:hover {
+    color: white;
+}
+
+.foot h4 a.ui-link:link {
+    color: white;
+}
+
+.item-thumbnail-left {
+	min-height: 70px;
+}
+
+.item-thumbnail-left + .item-thumbnail-left {
+	margin-top: 5px;
+}
+
+#friendPage .col {
+	padding-right: 5px;
+	margin-right: 5px;
+}
+

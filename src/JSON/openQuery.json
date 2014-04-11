@@ -1,0 +1,22 @@
+[
+{
+	"queryid": "q001",
+	"time": "2014-04-11T12:53:00",
+	"creatorid": "0001",
+	"situation": "Birthday",
+	"relationship": "Friend",
+	"gender": "F",
+	"age": 27,
+	"notes": "A girl who likes playing the piano"
+},
+{
+	"queryid": "q002",
+	"time": "2014-04-10T20:53:00",
+	"creatorid": "0002",
+	"situation": "Wedding",
+	"relationship": "Family",
+	"gender": "M",
+	"age": 30,
+	"notes": "Cool sportsman"
+}
+]
