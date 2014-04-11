@@ -1,62 +1,68 @@
 [
 {
-	"queryid": "q001",
+	"queryid": "q901",
 	"time": "2014-04-11T12:53:00",
-	"creatorid": "0001",
+	"creatorid": "0004",
 	"situation": "Birthday",
 	"relationship": "Friend",
 	"gender": "F",
 	"age": 27,
-	"notes": "A girl who likes playing the piano"
+	"notes": "A skiing lover",
+	"suggestioncount": 3
 },
 {
-	"queryid": "q002",
+	"queryid": "q902",
 	"time": "2014-04-10T20:53:00",
-	"creatorid": "0002",
+	"creatorid": "0004",
 	"situation": "Wedding",
 	"relationship": "Family",
 	"gender": "M",
 	"age": 30,
-	"notes": "Cool sportsman"
+	"notes": "My uncle, an artist",
+	"suggestioncount": 2
 },
 {
-	"queryid": "q003",
+	"queryid": "q903",
 	"time": "2014-03-22T08:53:00",
-	"creatorid": "0003",
+	"creatorid": "0004",
 	"situation": "New Job",
 	"relationship": "Family",
 	"gender": "M",
 	"age": 21,
-	"notes": "IT nerd"
+	"notes": "My cousin, loving cartoon",
+	"suggestioncount": 0
 },
 {
-	"queryid": "q004",
+	"queryid": "q904",
 	"time": "2014-03-30T09:20:00",
-	"creatorid": "0001",
+	"creatorid": "0004",
 	"situation": "Graduation",
 	"relationship": "Co-worker",
 	"gender": "M",
 	"age": 24,
-	"notes": "He's going to Europe after this"
+	"notes": "Big fan of dance music",
+	"suggestioncount": 1
 },
 {
-	"queryid": "q005",
+	"queryid": "q905",
 	"time": "2014-04-02T12:53:00",
-	"creatorid": "0002",
+	"creatorid": "0004",
 	"situation": "Move New Place",
 	"relationship": "Boss/Professor",
-	"gender": "F",
+	"gender": "M",
 	"age": 35,
-	"notes": "Fierce woman loving luxury stuff"
+	"notes": "Previous supervisor",
+	"suggestioncount": 4
 },
 {
-	"queryid": "q006",
+	"queryid": "q906",
 	"time": "2014-04-08T02:53:00",
-	"creatorid": "0003",
+	"creatorid": "0004",
 	"situation": "Valentine's Day",
 	"relationship": "Girl-/Boy-friend",
-	"gender": "F",
+	"gender": "M",
 	"age": 24,
-	"notes": "Pretty but allergic to flowers"
+	"notes": "Love playing pull",
+	"suggestioncount": 2
 }
 ]

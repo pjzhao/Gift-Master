@@ -59,3 +59,119 @@ nav span {
 	margin-right: 5px;
 }
 
+#openQueryPage .list a {
+	text-decoration: none;
+}
+
+#openQueryPage .item:hover {
+	background-color: whitesmoke;
+}
+
+#openQueryPage .item p {
+	font-weight: normal;
+}
+
+#openQueryPage .item p + p {
+	margin-top: -5px;
+}
+
+#openQueryPage .item .icon {
+	margin-right: 10px;
+}
+
+#newSuggestionPage form.list>div.row *{
+	margin-right: 5px;
+	width: 100%;
+}
+
+#newSuggestionPage .row button {
+	margin-top: auto;
+	margin-bottom: auto;
+	height: 45px;
+	padding: 0px;
+}
+
+#newSuggestionPage .row button span {
+	padding-left: 0px;
+}
+
+#queryPage .list a {
+	text-decoration: none;
+}
+
+#queryPage .item:hover {
+	background-color: whitesmoke;
+}
+
+#queryPage .item p {
+	font-weight: normal;
+}
+
+#queryPage .item p + p {
+	margin-top: -5px;
+}
+
+#queryPage .item .icon {
+	margin-right: 10px;
+}
+
+#newQueryPage form>div.row *{
+	margin-right: 5px;
+	width: 100%;
+}
+
+#suggestionPage .item p {
+	font-weight: normal;
+	max-width: 200px;
+}
+
+#suggestionPage .item p + p {
+	margin-top: -5px;
+}
+
+#suggestionPage .item .icon {
+	margin-right: 10px;
+}
+
+#suggestionHistoryPage .item p {
+	font-weight: normal;
+	max-width: 200px;
+}
+
+#suggestionHistoryPage .item p + p {
+	margin-top: -5px;
+}
+
+#suggestionHistoryPage .item .icon {
+	margin-right: 10px;
+}
+
+#wishlistsPage .item p {
+	font-weight: normal;
+}
+
+#wishlistsPage .item .icon {
+	margin-right: 10px;
+}
+
+#wishlistsPage .item:hover {
+	background-color: whitesmoke;
+}
+
+#wishlistsPage .list a {
+	text-decoration: none;
+}
+
+#wishlistPage .item p {
+	max-width: 200px;
+}
+
+#wishlistPage .item p + p {
+	margin-top: -5px;
+}
+
+#wishlistPage .item .icon {
+	margin-right: 10px;
+}
+
+
