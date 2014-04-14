@@ -146,11 +146,6 @@ nav span {
 	margin-right: 10px;
 }
 
-
-#wishlistPage list {
-	width: 100%;
-}
-
 #wishlistsPage .item p {
 	font-weight: normal;
 }
@@ -165,6 +160,10 @@ nav span {
 
 #wishlistsPage .list a {
 	text-decoration: none;
+}
+
+#wishlistPage .list {
+	width: 100%;
 }
 
 #wishlistPage .item p {
