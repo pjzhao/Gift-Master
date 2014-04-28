@@ -2510,71 +2510,7 @@ table {
   border-spacing: 0;
   border-collapse: collapse; }
 
-/**
- * Scaffolding
- * --------------------------------------------------
- */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
 
-a {
-  -webkit-user-drag: none;
-  -webkit-tap-highlight-color: transparent; }
-
-img {
-  -webkit-user-drag: none; }
-
-body, .ionic-body {
-  -webkit-touch-callout: none;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  -webkit-backface-visibility: hidden;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  text-size-adjust: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  color: black;
-  word-wrap: break-word;
-  font-size: 14px;
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  line-height: 20px;
-  text-rendering: optimizeLegibility;
-  -webkit-user-drag: none; }
-
-.scroll-content {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  margin-top: -1px;
-  width: auto;
-  height: auto; }
-
-.scroll-view {
-  overflow: hidden;
-  position: relative;
-  -webkit-backface-visibility: hidden;
-  margin-top: -1px; }
 
 /**
  * Scroll is the scroll view component available for complex and custom
