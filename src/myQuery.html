@@ -26,15 +26,20 @@
 						queries = data;
 					});
 				getQueries.complete(function() {
-					$("#queryCount").append(queries.length);
+					//$("#queryCount").append(queries.length);
 					for (i = 0; i < queries.length; i++) {
-						$("#myquery-list").append('<a href="suggestion.html"><li class="item row"><div class="col col-80" id="query_' + i + '"></div><span class="col col-20 ui-li-count" id="suggestioncount_' + i + '"><i class="icon ion-ios7-lightbulb-outline"></i></span></li></a>');
+						$("#myquery-list").append('<a id=' + queries[i].queryid + ' href="suggestion.html"><li class="item row"><div class="col col-80" id="query_' + i + '"></div><span class="col col-20 ui-li-count" id="suggestioncount_' + i + '"><i class="icon ion-ios7-lightbulb-outline"></i></span></li></a>');
 						$("#query_" + i).prepend("<p><i class='icon ion-person'></i>" + queries[i].notes + "</p>");
 						$("#query_" + i).prepend("<p><i class='icon ion-bag'></i>" + queries[i].gender + " " + queries[i].age + "</p>");				
 						$("#query_" + i).prepend("<h2>" + queries[i].relationship + " " + queries[i].situation + "</h2>");
 						$("#suggestioncount_" + i).prepend(queries[i].suggestioncount);
-					}
+						$("#" + queries[i].queryid).click(function() {
+							sessionStorage.selectedQueryId=$(this).attr('id');
+						});
+					};
+					
 				});		
+
 			</script>
 			<div data-role="header" class="head">
 				<h1>My Query</h1>

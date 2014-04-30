@@ -20,7 +20,7 @@
 	    	<script type="text/javascript">
 			    /* load items in a certain wishlist on wishlist page */
 				var wishlist,
-				getWishlist = $.getJSON( "JSON/wishlist.json", function() {
+				getWishlist = $.getJSON( "JSON/wishlist_" + sessionStorage.selectedWishlistId + ".json", function() {
 					})
 					  .done(function(data) {
 						wishlist = data

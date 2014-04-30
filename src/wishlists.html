@@ -28,9 +28,12 @@
 			    getWishlists.complete(function() {
 			      //$("#wishlistCount").append(wishlists.length);
 			      for (i = 0; i < wishlists.length; i++) {  
-			      	$("#wishlists-list").append('<li class="item row"><a href="wishlist.html" class="col col-80"><div id="wishlists_' + i + '"></div></a><div class="col col-20"><a href="wishlist.html"><i class="icon ion-edit"></i></a><i class="icon ion-ios7-trash"></i></div></li>');
+			      	$("#wishlists-list").append('<li class="item row"><a id=' + wishlists[i].wishlistid + ' href="wishlist.html" class="col col-80"><div id="wishlists_' + i + '"></div></a><div class="col col-20"><a href="wishlist.html"><i class="icon ion-edit"></i></a><i class="icon ion-ios7-trash"></i></div></li>');
 			        $("#wishlists_" + i).append("<h2>" + wishlists[i].wishlistname + " Wishlist</h2>");       
 			        $("#wishlists_" + i).append("<p><i class='icon ion-eye'></i>" + wishlists[i].privacy + "</p>");
+			       	$("#" + wishlists[i].wishlistid).click(function() {
+						sessionStorage.selectedWishlistId=$(this).attr('id');
+					});
 			      }
 			    }); 
 			</script>

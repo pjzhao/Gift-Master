@@ -97,6 +97,7 @@ nav span {
 
 #queryPage .list a {
 	text-decoration: none;
+	border: none;
 }
 
 #queryPage .item:hover {
@@ -119,6 +120,10 @@ nav span {
 	margin-left: 10px;
 }
 
+#queryPage li.item.row, #suggestionPage li.item.row, #mySuggestionPage li.item.row, #wishlistsPage li.item.row {
+	max-width: 98%;
+}
+
 #newQueryPage form>div.row *{
 	margin-right: 5px;
 	width: 100%;
@@ -137,16 +142,16 @@ nav span {
 	margin-right: 10px;
 }
 
-#suggestionHistoryPage .item p {
+#mySuggestionPage .item p {
 	font-weight: normal;
 	max-width: 200px;
 }
 
-#suggestionHistoryPage .item p + p {
+#mySuggestionPage .item p + p {
 	margin-top: -5px;
 }
 
-#suggestionHistoryPage .item .icon {
+#mySuggestionPage .item .icon {
 	margin-right: 10px;
 }
 

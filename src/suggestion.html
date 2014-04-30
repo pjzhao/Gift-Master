@@ -19,8 +19,11 @@
 		<div data-role="page" id="suggestionPage">
 			<script type="text/javascript">
 				/* load sugestion received from other users for a certain query on suggestion page */
+				$("#suggestion-list").html("");
 				var suggestion,
-				getSuggestion = $.getJSON("JSON/suggestion.json", function() {
+				/* 	Fetch the suggestion JSON file by queryId
+					Should be replaced by AJAX request */
+				getSuggestion = $.getJSON("JSON/suggestion_" + sessionStorage.selectedQueryId + ".json", function() {
 					})
 					.done(function(data) {
 						suggestion = data;
