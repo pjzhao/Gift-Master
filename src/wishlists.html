@@ -20,7 +20,9 @@
     		<script type="text/javascript">
 			    /* load a full list of wishlists on wishlists page */
 			    var wishlists,
-			    getWishlists = $.getJSON("JSON/wishlists.json", function() {
+			    /* 	Fetch the wishlists JSON file by user Id
+					Should be replaced by AJAX request */
+			    getWishlists = $.getJSON("JSON/wishlists_" + sessionStorage.userId + ".json", function() {
 			      })
 			      .done(function(data) {
 			        wishlists = data;

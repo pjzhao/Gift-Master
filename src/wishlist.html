@@ -20,6 +20,8 @@
 	    	<script type="text/javascript">
 			    /* load items in a certain wishlist on wishlist page */
 				var wishlist,
+				/* 	Fetch the wishlist JSON file by wishlistId
+					Should be replaced by AJAX request */
 				getWishlist = $.getJSON( "JSON/wishlist_" + sessionStorage.selectedWishlistId + ".json", function() {
 					})
 					  .done(function(data) {

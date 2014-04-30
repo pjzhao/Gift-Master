@@ -1,0 +1,17 @@
+[
+{
+	"wishlistid": "w001",
+	"wishlistname": "Birthday",
+	"privacy": "Public"
+},
+{
+	"wishlistid": "w002",
+	"wishlistname": "Summer",
+	"privacy": "Friends"
+},
+{
+	"wishlistid": "w003",
+	"wishlistname": "Secret",
+	"privacy": "Private"
+}
+]
