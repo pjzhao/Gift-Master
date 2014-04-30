@@ -28,6 +28,7 @@
 			    getWishlists.complete(function() {
 			      //$("#wishlistCount").append(wishlists.length);
 			      for (i = 0; i < wishlists.length; i++) {  
+			      	$("#wishlists-list").append('<li class="item row"><a href="wishlist.html" class="col col-80"><div id="wishlists_' + i + '"></div></a><div class="col col-20"><a href="wishlist.html"><i class="icon ion-edit"></i></a><i class="icon ion-ios7-trash"></i></div></li>');
 			        $("#wishlists_" + i).append("<h2>" + wishlists[i].wishlistname + " Wishlist</h2>");       
 			        $("#wishlists_" + i).append("<p><i class='icon ion-eye'></i>" + wishlists[i].privacy + "</p>");
 			      }
@@ -37,45 +38,9 @@
 				<h1>My Wishlists</h1>
 			</div>
 			<div data-role="content">
-		    	<ul class="list">
-		            
-		            <li class="item row">
-		            	<a href="wishlist.html" class="col col-80">
-		                	<div id="wishlists_0"></div>
-		                </a>
-		                <div class="col col-20">
-		                    <a href="wishlist.html">
-		                        <i class="icon ion-edit"></i>
-		                    </a>
-		                    <i class="icon ion-ios7-trash"></i>
-		                </div>
-		            </li>
-
-		            <li class="item row">
-		            <a href="wishlist.html" class="col col-80">
-		                <div id="wishlists_1"></div>
-		            </a>
-		                <div class="col col-20">
-		                    <a href="wishlist.html">
-		                        <i class="icon ion-edit"></i>
-		                    </a>
-		                    <i class="icon ion-ios7-trash"></i>
-		                </div>
-		            </li>  
-		             
-		            <li class="item row">
-		                <a href="wishlist.html" class="col col-80"> 
-		                    <div id="wishlists_2"></div>
-		                </a>
-		                <div class="col col-20">
-		                    <a href="wishlist.html">
-		                        <i class="icon ion-edit"></i>
-		                    </a>
-		                    <i class="icon ion-ios7-trash"></i>
-		                </div>
-		            </li>        
-
-		            <li class="item row">
+		    	<ul class="list" id="wishlists-list"></ul>
+		    	<ul class="list">     
+		            <li class="item row add-wishlist">
 		            <div class="col col-offset-80"></div>
 		            <div class="col col-10">
 		                <i class="icon ion-plus-round"></i>

@@ -27,6 +27,7 @@
 					});
 				getSuggestion.complete(function() {
 					for (i = 0; i < suggestion.length; i++) {
+						$("#suggestion-list").append('<li class="item row"><div class="col col-80" id="suggestion_' + i + '"></div><span class="col col-20 ui-li-count" id="suggestionprice_' + i + '"><i class="icon ion-edit"></i></span></li>');
 						$("#suggestion_" + i).prepend("<p><i class='icon ion-pricetags'></i>$" + suggestion[i].price + "</p>");
 						$("#suggestion_" + i).prepend("<p><i class='icon ion-ios7-cart-outline'></i>" + suggestion[i].url + "</p>");				
 						$("#suggestion_" + i).prepend("<h2>" + suggestion[i].giftname + "</h2>");
@@ -38,27 +39,7 @@
 				<h1>Suggestion</h1>
 			</div>
 			<div data-role="content">
-		        <ul class="list">
-		            <li class="item row">
-		                <div class="col col-80" id="suggestion_0"></div>
-		                <span class="col col-20 ui-li-count" id="suggestionprice_0">
-		                    <i class="icon ion-edit"></i>
-		                </span>
-		            </li>
-		            <li class="item row">
-		                <div class="col col-80" id="suggestion_1"></div>
-		                <span class="col col-20 ui-li-count" id="suggestionprice_1">
-		                    <i class="icon ion-edit"></i>
-		                </span>
-		            </li>
-		            <li class="item row">
-		                <div class="col col-80" id="suggestion_2"></div>
-		                <span class="col col-20 ui-li-count" id="suggestionprice_2">
-		                    <i class="icon ion-edit"></i>
-		                </span>
-		            </li>
-		           
-		        </ul>    
+		        <ul class="list" id="suggestion-list"></ul>    
 		  	    <ul data-role="listview">
 		      		<li><a href="myQuery.html">
 		            	<i class="icon ion-help-circled"></i>

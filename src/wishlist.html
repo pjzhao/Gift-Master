@@ -27,6 +27,7 @@
 					  });
 				getWishlist.complete(function() {
 					for (i = 0; i < wishlist.items.length; i++) {
+						$("#wishlist-list").append('<li class="item item-thumbnail-left" href="#" id="item_' + i + '"></li>');
 						$("#item_" + i).append("<img src='" + wishlist.items[i].picUrl + "'>");
 						$("#item_" + i).append("<h2>" + wishlist.items[i].giftname + "</h2>");
 						$("#item_" + i).append("<p>$" + wishlist.items[i].price + "</p>");
@@ -40,17 +41,7 @@
 			</div>
 			<div data-role="content">	
 		    	<div class="row friend-pic-container">
-		            <div class="list">
-		                <li class="item item-thumbnail-left" href="#" id="item_0"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_1"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_2"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_3"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_4"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_5"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_6"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_7"></li>
-		                <li class="item item-thumbnail-left" href="#" id="item_8"></li>
-		            </div>  	
+		            <div class="list" id="wishlist-list"></div>  	
 		        </div>
 			  	<ul data-role="listview">
 		            <li><a href="wishlists.html">

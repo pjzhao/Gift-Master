@@ -28,6 +28,7 @@
 				getQueries.complete(function() {
 					$("#queryCount").append(queries.length);
 					for (i = 0; i < queries.length; i++) {
+						$("#myquery-list").append('<a href="suggestion.html"><li class="item row"><div class="col col-80" id="query_' + i + '"></div><span class="col col-20 ui-li-count" id="suggestioncount_' + i + '"><i class="icon ion-ios7-lightbulb-outline"></i></span></li></a>');
 						$("#query_" + i).prepend("<p><i class='icon ion-person'></i>" + queries[i].notes + "</p>");
 						$("#query_" + i).prepend("<p><i class='icon ion-bag'></i>" + queries[i].gender + " " + queries[i].age + "</p>");				
 						$("#query_" + i).prepend("<h2>" + queries[i].relationship + " " + queries[i].situation + "</h2>");
@@ -39,44 +40,7 @@
 				<h1>My Query</h1>
 			</div>
 			<div data-role="content">	
-		        <ul class="list">
-	                <a href="suggestion.html"><li class="item row">
-	                	<div class="col col-80" id="query_0"></div>
-	                	<span class="col col-20 ui-li-count" id="suggestioncount_0">
-	                    	<i class="icon ion-ios7-lightbulb-outline"></i>
-	                    </span>
-	                </li></a>
-	                <a href="suggestion.html"><li class="item row">
-	                	<div class="col col-80" id="query_1"></div>
-	                	<span class="col col-20 ui-li-count" id="suggestioncount_1">
-	                    	<i class="icon ion-ios7-lightbulb-outline"></i>
-	                    </span>
-	                </li></a>
-	                <a href="suggestion.html"><li class="item row">
-	                	<div class="col col-80" id="query_2"></div>
-	                	<span class="col col-20 ui-li-count" id="suggestioncount_2">
-	                    	<i class="icon ion-ios7-lightbulb-outline"></i>
-	                    </span>
-	                </li></a>
-	                <a href="suggestion.html"><li class="item row">
-	                	<div class="col col-80" id="query_3"></div>
-	                	<span class="col col-20 ui-li-count" id="suggestioncount_3">
-	                    	<i class="icon ion-ios7-lightbulb-outline"></i>
-	                    </span>
-	                </li></a>
-	                <a href="suggestion.html"><li class="item row">
-	                	<div class="col col-80" id="query_4"></div>
-	                	<span class="col col-20 ui-li-count" id="suggestioncount_4">
-	                    	<i class="icon ion-ios7-lightbulb-outline"></i>
-	                    </span>
-	                </li></a>
-	                <a href="suggestion.html"><li class="item row">
-	                	<div class="col col-80" id="query_5"></div>
-	                	<span class="col col-20 ui-li-count" id="suggestioncount_5">
-	                    	<i class="icon ion-ios7-lightbulb-outline"></i>
-	                    </span>
-	                </li></a>
-		        </ul> 
+		        <ul class="list" id="myquery-list"></ul> 
 		  	    <ul data-role="listview">
 		      		<li><a href="home.html">
 		            	<i class="icon ion-home"></i>

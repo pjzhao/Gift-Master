@@ -28,6 +28,7 @@
 				getOpenQueries.complete(function() {
 					//$("#openQueryCount").append(openQueries.length);
 					for (i = 0; i < openQueries.length; i++) {
+						$("#openquery-list").append('<a href="newSuggestion.html"><li class="item" id="openQuery_' + i + '"></li></a>');
 						$("#openQuery_" + i).append("<h2>" + openQueries[i].relationship + " " + openQueries[i].situation + "</h2>");
 						$("#openQuery_" + i).append("<p><i class='icon ion-bag'></i>" + openQueries[i].gender + " " + openQueries[i].age + "</p>");
 						$("#openQuery_" + i).append("<p><i class='icon ion-person'></i>" + openQueries[i].notes + "</p>");
@@ -38,18 +39,12 @@
 				<h1>SOS!</h1>
 			</div>
 			<div data-role="content">	
-		        <ul class="list">
-		       		<a href="newSuggestion.html"><li class="item" id="openQuery_0"></li></a>
-		        	<a href="newSuggestion.html"><li class="item" id="openQuery_1"></li></a>
-		            <a href="newSuggestion.html"><li class="item" id="openQuery_2"></li></a>
-		            <a href="newSuggestion.html"><li class="item" id="openQuery_3"></li></a>
-		            <a href="newSuggestion.html"><li class="item" id="openQuery_4"></li></a>
-		            <a href="newSuggestion.html"><li class="item" id="openQuery_5"></li></a>
-		        </ul>   
+		        <ul class="list" id="openquery-list"></ul>   
 		  	    <ul data-role="listview">
 		      		<li><a href="home.html">
 		            	<i class="icon ion-home"></i>
-		          		Back to My Profile</a></li>
+		          		Back to My Profile
+		          	</a></li>
 				</ul>    
 			</div>
 		    <div data-role="footer" class="foot">      

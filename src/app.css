@@ -115,6 +115,10 @@ nav span {
 	margin-right: 10px;
 }
 
+#queryPage i.icon.ion-ios7-lightbulb-outline {
+	margin-left: 10px;
+}
+
 #newQueryPage form>div.row *{
 	margin-right: 5px;
 	width: 100%;
@@ -160,6 +164,10 @@ nav span {
 
 #wishlistsPage .list a {
 	text-decoration: none;
+}
+
+#wishlistsPage li.item.row.add-wishlist {
+	margin-top: -22px;
 }
 
 #wishlistPage .list {

@@ -26,8 +26,10 @@
 						mySuggestion = data;
 					});
 				getMySuggestion.complete(function() {
-					$("#suggestionCount").append(mySuggestion.length);
+					//$("#suggestionCount").append(mySuggestion.length);
+					console.log(mySuggestion.length);
 					for (i = 0; i < mySuggestion.length; i++) {
+						$("#mysuggestion-list").append('<li class="item row"><div class="col col-80" id="mysuggestion_' + i + '"></div><span class="col col-20 ui-li-count" id="myrating_' + i + '"><i class="icon ion-thumbsup"></i></span></li>');
 						$("#mysuggestion_" + i).prepend("<p><i class='icon ion-pricetags'></i>$" + mySuggestion[i].price + "</p>");
 						$("#mysuggestion_" + i).prepend("<p><i class='icon ion-ios7-cart-outline'></i>" + mySuggestion[i].url + "</p>");		
 						$("#mysuggestion_" + i).prepend("<p><i class='icon ion-ios7-help-outline'></i>" + mySuggestion[i].relationship + " " + mySuggestion[i].situation + "</p>");
@@ -40,29 +42,7 @@
 				<h1>My Suggestion History</h1>
 			</div>
 			<div data-role="content">	
-		    
-		    	<ul class="list">
-		            <li class="item row">
-		                <div class="col col-80" id="mysuggestion_0"></div>
-		                <span class="col col-20 ui-li-count" id="myrating_0">
-		                    <i class="icon ion-thumbsup"></i>
-		                </span>
-		            </li>
-		            <li class="item row">
-		                <div class="col col-80" id="mysuggestion_1"></div>
-		                <span class="col col-20 ui-li-count" id="myrating_1">
-		                    <i class="icon ion-thumbsup"></i>
-		                </span>
-		            </li>
-		            <li class="item row">
-		                <div class="col col-80" id="mysuggestion_2"></div>
-		                <span class="col col-20 ui-li-count" id="myrating_2">
-		                    <i class="icon ion-thumbsup"></i>
-		                </span>
-		            </li>
-		           
-		        </ul> 
-		    
+		    	<ul class="list" id="mysuggestion-list"></ul> 
 		  	    <ul data-role="listview">
 		      		<li><a href="home.html">
 		            	<i class="icon ion-home"></i>

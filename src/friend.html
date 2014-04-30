@@ -28,6 +28,7 @@
 				getFriends.complete(function() {
 					//$("#friendCount").append(friends.length);
 					for (i = 0; i < friends.length; i++) {
+						$("#friend-list").append('<a class="item item-thumbnail-left" href="#" id="friend_' + i + '"></a>');
 						$("#friend_" + i).append("<img src='" + friends[i].picUrl + "'>");
 						$("#friend_" + i).append("<h2>" + friends[i].username + "</h2>");
 						$("#friend_" + i).append("<p>" + friends[i].gender + "   " + friends[i].age + "</p>");
@@ -38,20 +39,7 @@
 				<h1>My Friends</h1>
 			</div>
 			<div data-role="content">	
-		      <div class="row friend-pic-container">
-		    	<div class="col col-40">
-		            <div class="list">
-		                <a class="item item-thumbnail-left" href="#" id="friend_0"></a>
-		                <a class="item item-thumbnail-left" href="#" id="friend_2"></a>
-		            </div>  	
-		        </div>
-		        <div class="col col-40">
-		        	<div class="list">
-		            	<a class="item item-thumbnail-left" href="#" id="friend_1"></a>
-		            </div>
-		        </div>
-		      </div>
-		    	
+	          <div class="list" id="friend-list"></div>  			    	
 		   	  <ul data-role="listview">
 		        <li><a href="home.html">
 		          <i class="icon ion-home"></i>
