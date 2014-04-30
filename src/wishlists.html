@@ -16,6 +16,7 @@
 		</script>
 	</head>
     <body>
+    	/* Wishlists page is used for both the user's own wishlists and the one of friends' */
     	<div data-role="page" id="wishlistsPage">
     		<script type="text/javascript">
 			    /* load a full list of wishlists on wishlists page */
@@ -36,6 +37,7 @@
 			       	$("#" + wishlists[i].wishlistid).click(function() {
 						sessionStorage.selectedWishlistId=$(this).attr('id');
 					});
+					/* Allow edit if the user is the owner of the wishlists */
 					if (sessionStorage.wishlistsOwnerId == sessionStorage.userId) {
 			        	$("#wishlists-edit_" + i).append('<a href="wishlist.html"><i class="icon ion-edit"></i></a><i class="icon ion-ios7-trash"></i>')
 			        }
