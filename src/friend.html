@@ -28,10 +28,13 @@
 				getFriends.complete(function() {
 					//$("#friendCount").append(friends.length);
 					for (i = 0; i < friends.length; i++) {
-						$("#friend-list").append('<a class="item item-thumbnail-left" href="#" id="friend_' + i + '"></a>');
-						$("#friend_" + i).append("<img src='" + friends[i].picUrl + "'>");
-						$("#friend_" + i).append("<h2>" + friends[i].username + "</h2>");
-						$("#friend_" + i).append("<p>" + friends[i].gender + "   " + friends[i].age + "</p>");
+						$("#friend-list").append('<a class="item item-thumbnail-left" href="wishlists.html" id="' + i + '"></a>');
+						$("#" + i).append("<img src='" + friends[i].picUrl + "'>");
+						$("#" + i).append("<h2>" + friends[i].username + "</h2>");
+						$("#" + i).append("<p>" + friends[i].gender + "   " + friends[i].age + "</p>");
+						$("#" + i).click(function() {
+							sessionStorage.wishlistsOwnerId = friends[$(this).attr('id')].userid;
+						});
 					}
 				});  
 			</script>

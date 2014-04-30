@@ -49,8 +49,8 @@
 	  		getUser.complete(function() {
 	  			$("#hello").prepend("Hello, " + user.username);
 	  			$("#rating").append(user.rating);
-	  			sessionStorage.userId=user.userid;
-	  			
+	  			sessionStorage.userId = user.userid;
+	  			sessionStorage.wishlistsOwnerId = user.userid;
 	  		});
 	
 	      /* load top gifts on profile page */

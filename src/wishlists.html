@@ -22,7 +22,7 @@
 			    var wishlists,
 			    /* 	Fetch the wishlists JSON file by user Id
 					Should be replaced by AJAX request */
-			    getWishlists = $.getJSON("JSON/wishlists_" + sessionStorage.userId + ".json", function() {
+			    getWishlists = $.getJSON("JSON/wishlists_" + sessionStorage.wishlistsOwnerId + ".json", function() {
 			      })
 			      .done(function(data) {
 			        wishlists = data;
@@ -30,36 +30,41 @@
 			    getWishlists.complete(function() {
 			      //$("#wishlistCount").append(wishlists.length);
 			      for (i = 0; i < wishlists.length; i++) {  
-			      	$("#wishlists-list").append('<li class="item row"><a id=' + wishlists[i].wishlistid + ' href="wishlist.html" class="col col-80"><div id="wishlists_' + i + '"></div></a><div class="col col-20"><a href="wishlist.html"><i class="icon ion-edit"></i></a><i class="icon ion-ios7-trash"></i></div></li>');
+			      	$("#wishlists-list").append('<li class="item row"><a id=' + wishlists[i].wishlistid + ' href="wishlist.html" class="col col-80"><div id="wishlists_' + i + '"></div></a><div class="col col-20" id="wishlists-edit_' + i + '"></div></li>');
 			        $("#wishlists_" + i).append("<h2>" + wishlists[i].wishlistname + " Wishlist</h2>");       
 			        $("#wishlists_" + i).append("<p><i class='icon ion-eye'></i>" + wishlists[i].privacy + "</p>");
 			       	$("#" + wishlists[i].wishlistid).click(function() {
 						sessionStorage.selectedWishlistId=$(this).attr('id');
 					});
+					if (sessionStorage.wishlistsOwnerId == sessionStorage.userId) {
+			        	$("#wishlists-edit_" + i).append('<a href="wishlist.html"><i class="icon ion-edit"></i></a><i class="icon ion-ios7-trash"></i>')
+			        }
+			      };
+			      if (sessionStorage.wishlistsOwnerId == sessionStorage.userId) {
+			      	$("#wishlists-add").append('<li class="item row add-wishlist"><div class="col col-offset-80"></div><div class="col col-10"><i class="icon ion-plus-round"></i></div><div class="col col-offset-10"></div></li>');
+			      	$("#wishlists-head").append('My Wishlists');
+			      } else {
+			      	$("#wishlists-head").append('Wishlists');
 			      }
 			    }); 
 			</script>
 			<div data-role="header" class="head">
-				<h1>My Wishlists</h1>
+				<h1 id="wishlists-head"></h1>
 			</div>
-			<div data-role="content">
+			<div data-role="content" id="wishlists-content">
 		    	<ul class="list" id="wishlists-list"></ul>
-		    	<ul class="list">     
-		            <li class="item row add-wishlist">
-		            <div class="col col-offset-80"></div>
-		            <div class="col col-10">
-		                <i class="icon ion-plus-round"></i>
-		            </div>
-		            <div class="col col-offset-10"></div>
-		            </li>        
-		        </ul>
-		 
-			  	<ul data-role="listview">
-					<li><a href="home.html">
-		            	<i class="icon ion-home"></i>
-		                My Profile
-		            </a></li>
-				</ul>	
+		    	<ul class="list" id="wishlists-add"></ul>
+		    	<ul data-role="listview">
+		    		<li><a href="home.html">
+		    			<i class="icon ion-home"></i>
+		    			My Profile
+		    		</a></li>
+		    		<li><a href="friend.html">
+		    			<i class="icon ion-android-social"></i>
+		    			My Friends
+		    		</a></li>
+		    	</ul>
+			      
 			</div>
 		  <div data-role="footer" class="foot">      
 		      <h4><a href="mailto:pz454@nyu.edu">
