@@ -20,6 +20,8 @@
     		<script type="text/javascript">
 		    	/* load friend list on friend page */
 				var friends,
+				/* 	Fetch the friend JSON file by userid
+					Should be replaced by AJAX GET request */
 				getFriends = $.getJSON( "JSON/friend.json", function() {
 					})
 					  .done(function(data) {

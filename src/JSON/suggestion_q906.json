@@ -1,5 +1,6 @@
 [
 {
+	"suggestionid": "s106",
 	"userid": "0001",
 	"queryid": "q906",
 	"giftid": "g001",
@@ -10,6 +11,7 @@
 	"rating": 4.5
 },
 {
+	"suggestionid": "s206",
 	"userid": "0002",
 	"queryid": "q906",
 	"giftid": "g002",

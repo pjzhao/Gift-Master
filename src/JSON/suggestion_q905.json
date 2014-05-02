@@ -1,5 +1,6 @@
 [
 {
+	"suggestionid": "s105",
 	"userid": "0001",
 	"queryid": "q905",
 	"giftid": "g001",
@@ -10,6 +11,7 @@
 	"rating": 4.5
 },
 {
+	"suggestionid": "s205",
 	"userid": "0002",
 	"queryid": "q905",
 	"giftid": "g002",
@@ -20,6 +22,7 @@
 	"rating": 0.0
 },
 {
+	"suggestionid": "s305",
 	"userid": "0003",
 	"queryid": "q905",
 	"giftid": "g003",
@@ -30,6 +33,7 @@
 	"rating": 4.2
 },
 {
+	"suggestionid": "s315",
 	"userid": "0003",
 	"queryid": "q905",
 	"giftid": "g003",

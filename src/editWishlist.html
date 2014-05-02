@@ -21,7 +21,7 @@
 				/* load attributes of a certain wishlist on editWishlist page */
 				var wishlist,
 				/* 	Fetch the wishlist JSON file by wishlistId
-					Should be replaced by AJAX request */
+					Should be replaced by AJAX GET request */
 				getWishlist = $.getJSON( "JSON/wishlist_" + sessionStorage.selectedWishlistId + ".json", function() {
 					})
 					  .done(function(data) {

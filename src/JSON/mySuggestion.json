@@ -1,5 +1,6 @@
 [
-{
+{	
+	"suggestionid": "s401",
 	"userid": "0004",
 	"queryid": "q001",
     "situation": "Birthday",
@@ -11,7 +12,8 @@
 	"notes": "Great and romantic smell",
 	"rating": 4.5
 },
-{
+{	
+	"suggestionid": "s402",
 	"userid": "0004",
 	"queryid": "q002",
 	"situation": "Wedding",
@@ -24,6 +26,7 @@
 	"rating": 0.0
 },
 {
+	"suggestionid": "s403",
 	"userid": "0004",
 	"queryid": "q001",
 	"situation": "New Job",

@@ -41,20 +41,24 @@
     	<script type="text/javascript">
 	  		/* load user information on profile page */
 	  	  var user,
-	  		getUser = $.getJSON( "JSON/user.json", function() {
-	  			})
-	  			  .done(function(data) {
-	  				user = data
-	  			  });
-	  		getUser.complete(function() {
-	  			$("#hello").prepend("Hello, " + user.username);
-	  			$("#rating").append(user.rating);
-	  			sessionStorage.userId = user.userid;
-	  			sessionStorage.wishlistsOwnerId = user.userid;
-	  		});
+	  	  /* 	Fetch the user JSON file by userid after log in
+					Should be replaced by AJAX GET request */
+  		  getUser = $.getJSON( "JSON/user.json", function() {
+  			  })
+  			  .done(function(data) {
+  				  user = data
+  			  });
+  		  getUser.complete(function() {
+  			  $("#hello").prepend("Hello, " + user.username);
+  			  $("#rating").append(user.rating);
+  			  sessionStorage.userId = user.userid;
+  			  sessionStorage.wishlistsOwnerId = user.userid;
+  		  });
 	
 	      /* load top gifts on profile page */
 	      var topGifts,
+	      /* 	Fetch the gift JSON file which consists of top 9 gifts
+					Should be replaced by AJAX GET request */
 	      getTopGifts = $.getJSON("JSON/gift.json", function() {
 	      })
 	        .done(function(data) {

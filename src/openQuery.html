@@ -20,6 +20,8 @@
 			<script type="text/javascript">
 				/* load all open queries on openQuery page */
 				var openQueries,
+				/* 	Fetch the openQuery JSON file which consists of no more than 20 queries
+					Should be replaced by AJAX GET request */
 				getOpenQueries = $.getJSON("JSON/openQuery.json", function() {
 					})
 					.done(function(data) {

@@ -21,8 +21,25 @@
 				/* load sugestion received from other users for a certain query on suggestion page */
 				$("#suggestion-list").html("");
 				var suggestion,
+				rate = function(rateId) {
+					$("i#" + rateId).parent().hide();
+					var index = $("i#" + rateId).parent().attr('id').substring(16);
+					$("i#" + rateId).parent().parent().append('<form action="suggestion.html" id="rate_form"><div class="row"><input type="number" min=0 max=5 step=0.1 name="rating" id="editRating"><input type="submit" value="Rate" class="button button-dark no-margin no-padding"></div></form>');
+					$("#editRating").val(suggestion[index].rating);
+					sessionStorage.rateSuggestionId = rateId;
+					$("form").submit(function(event) {
+						/* An AJAX PUT request should be sent with the data as a JSON rateSuggestion */
+						var rateSuggestion = {
+						  	"suggestionid": sessionStorage.rateSuggestionId,
+						  	"rating": $("input:first").val()
+						};
+						console.log(rateSuggestion);
+						$("#rate_form").remove();
+						$("i#" + rateId).parent().show();
+					});
+				},
 				/* 	Fetch the suggestion JSON file by queryId
-					Should be replaced by AJAX request */
+					Should be replaced by AJAX GET request */
 				getSuggestion = $.getJSON("JSON/suggestion_" + sessionStorage.selectedQueryId + ".json", function() {
 					})
 					.done(function(data) {
@@ -30,11 +47,11 @@
 					});
 				getSuggestion.complete(function() {
 					for (i = 0; i < suggestion.length; i++) {
-						$("#suggestion-list").append('<li class="item row"><div class="col col-80" id="suggestion_' + i + '"></div><span class="col col-20 ui-li-count" id="suggestionprice_' + i + '"><i class="icon ion-edit"></i></span></li>');
+						$("#suggestion-list").append('<li class="item row"><div class="col col-80" id="suggestion_' + i + '"></div><span class="col col-20 ui-li-count" id="suggestionprice_' + i + '"><i class="icon ion-edit" id="' + suggestion[i].suggestionid + '" onclick="rate(this.id)"></i></span></li>');
 						$("#suggestion_" + i).prepend("<p><i class='icon ion-pricetags'></i>$" + suggestion[i].price + "</p>");
 						$("#suggestion_" + i).prepend("<p><i class='icon ion-ios7-cart-outline'></i>" + suggestion[i].url + "</p>");				
 						$("#suggestion_" + i).prepend("<h2>" + suggestion[i].giftname + "</h2>");
-						$("#suggestionprice_" + i).prepend("rate:" + suggestion[i].rating);
+						$("#suggestionprice_" + i).prepend("<span id='" + suggestion[i].suggestionid + "'>rate:" + suggestion[i].rating + "</span>");
 					}
 				});	
 			</script>

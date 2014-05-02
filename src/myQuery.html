@@ -20,6 +20,8 @@
 	    	<script type="text/javascript">
 				/* load my past/open queries on myQuery page */ 
 				var queries,
+				/* 	Fetch the query JSON file by userid (myQuery)
+					Should be replaced by AJAX GET request */
 				getQueries = $.getJSON("JSON/query.json", function() {
 					})
 					.done(function(data) {

@@ -2,6 +2,14 @@
 	margin-top: 0px;
 } 
 
+.no-padding {
+	padding: 0px;
+}
+
+.no-margin {
+	margin: 0px;
+}
+
 nav span {
 	text-align: center;
 }
@@ -140,6 +148,23 @@ nav span {
 
 #suggestionPage .item .icon {
 	margin-right: 10px;
+}
+
+#suggestionPage input#editRating {
+	max-width: 50%;
+	height: 50px;
+}
+
+#suggestionPage input.button.no-margin.no-padding {
+	font-size: 12px;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	margin: auto;
+	min-width: 0;
+	min-height: 0;
+	border-radius: 30px;
+	vertical-align: middle;
 }
 
 #mySuggestionPage .item p {

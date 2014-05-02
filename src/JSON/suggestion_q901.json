@@ -1,5 +1,6 @@
 [
-{
+{	
+	"suggestionid": "s101",
 	"userid": "0001",
 	"queryid": "q901",
 	"giftid": "g001",
@@ -9,7 +10,8 @@
 	"notes": "Great and romantic smell",
 	"rating": 4.5
 },
-{
+{	
+	"suggestionid": "s201",
 	"userid": "0002",
 	"queryid": "q901",
 	"giftid": "g002",
@@ -20,6 +22,7 @@
 	"rating": 0.0
 },
 {
+	"suggestionid": "s301",
 	"userid": "0003",
 	"queryid": "q901",
 	"giftid": "g003",
