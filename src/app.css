@@ -124,7 +124,7 @@ nav span {
 	max-width: 98%;
 }
 
-#newQueryPage form>div.row *{
+#newQueryPage form>div.row *, #editWishlistPage form>div.row *, #editGiftPage form>div.row * {
 	margin-right: 5px;
 	width: 100%;
 }
