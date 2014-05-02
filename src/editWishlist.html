@@ -19,41 +19,58 @@
 	    <div data-role="page" id="editWishlistPage">
 	    	<script type="text/javascript">
 				/* load attributes of a certain wishlist on editWishlist page */
-				var wishlist,
-				/* 	Fetch the wishlist JSON file by wishlistId
-					Should be replaced by AJAX GET request */
-				getWishlist = $.getJSON( "JSON/wishlist_" + sessionStorage.selectedWishlistId + ".json", function() {
-					})
-					  .done(function(data) {
-						wishlist = data
-					  });
-				getWishlist.complete(function() {
-					$("#wishlistName").val(wishlist.wishlistname);
-					if (wishlist.privacy == 'Public') {
-						$("#P1").attr("selected", "selected")
-					} else if (wishlist.privacy == 'Friends') {
-						$("#P2").attr("selected", "selected")
-					} else {
-						$("#P3").attr("selected", "selected")
-					};
-					$("#editWishlist-head").append(" - " + wishlist.wishlistname);
-				});
+				var wishlist;
+				if (sessionStorage.selectedWishlistId.length > 0) {
+					/* 	Fetch the wishlist JSON file by wishlistId
+						Should be replaced by AJAX GET request */
+					getWishlist = $.getJSON( "JSON/wishlist_" + sessionStorage.selectedWishlistId + ".json", function() {
+						})
+						  .done(function(data) {
+							wishlist = data
+						  });
+					getWishlist.complete(function() {
+						$("#wishlistName").val(wishlist.wishlistname);
+						if (wishlist.privacy == 'Public') {
+							$("#P1").attr("selected", "selected")
+						} else if (wishlist.privacy == 'Friends') {
+							$("#P2").attr("selected", "selected")
+						} else {
+							$("#P3").attr("selected", "selected")
+						};
+						$("#editWishlist-head").html("Edit Wishlist - " + wishlist.wishlistname)
+					});
+				};
 				$("form").submit(function(event) {
-					if ($("input:first").val() == "") {
-						$("input:first").val(wishlist.wishlistname)
+					if (sessionStorage.selectedWishlistId.length > 0) {
+						if ($("input:first").val() == "") {
+							$("input:first").val(wishlist.wishlistname)
+						}
+						/* An AJAX PUT request should be sent with the data as a JSON updateWishlist: */
+						var updateWishlist = {
+							"wishlistid": wishlist.wishlistid,
+						  	"wishlistname": $("input:first").val(),
+						  	"privacy": $("select").val()
+						};
+						alert('Edited wishlist successfully!');
+						console.log(updateWishlist);
+					} else {
+						/* An AJAX POST request should be sent with the data as a JSON newWishlist,
+							with a new wishlistid generated automatically: */
+						if ($("input:first").val() == "") {
+							$("input:first").val("temp_" + Date())
+						};
+						var newWishlist = {
+						  	"wishlistname": $("input:first").val(),
+						  	"privacy": $("select").val()
+						};
+						alert('Added wishlist successfully!');
+						console.log(newWishlist);
 					}
-					/* An AJAX PUT request should be sent with the data as a JSON updateWishlist: */
-					var updateWishlist = {
-						"wishlistid": wishlist.wishlistid,
-					  	"wishlistname": $("input:first").val(),
-					  	"privacy": $("select").val()
-					};
-					console.log(updateWishlist);
 				});
 
 			</script>
 		  	<div data-role="header" class="head">
-				<h1 id="editWishlist-head">Edit Wishlist</h1>
+				<h1 id="editWishlist-head">Add Wishlist</h1>
 			</div>
 		    <div data-role="content">
            		<form action="wishlists.html">

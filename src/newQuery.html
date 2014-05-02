@@ -12,45 +12,56 @@
 		<link href="app.css" rel="stylesheet" type="text/css">
 		<script src="jquery-1.8.3.min.js" type="text/javascript"></script>
 		<script src="jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
-		<script src="jQueryAssets/jquery-ui-1.9.2.button.custom.min.js" type="text/javascript">	
-		</script>
-		<script type="text/javascript">
-		</script>
+		<script src="jQueryAssets/jquery-ui-1.9.2.button.custom.min.js" type="text/javascript">	</script>
 	</head>
     <body>
 		<div data-role="page" id="newQueryPage">
+			<script type="text/javascript">
+				$("form").submit(function(event) {
+					/* An AJAX POST request should be sent with the data as a JSON newQuery */	
+					var newQuery = {
+					  	"situation": $("#situation").val(),
+					  	"relationship": $("#relationship").val(),
+					  	"gender": $("#gender").val(),
+					  	"age": $("#age").val(),
+					  	"notes": $("#notes").val()
+					};
+					console.log(newQuery);
+					alert('Post new query successfully!');
+				});
+			</script>
 			<div data-role="header" class="head">
 				<h1>New Query</h1>
 			</div>
 			<div data-role="content">	
-		        <form>
+		        <form action="myQuery.html">
 		        	<label for="situation" class="select">What is this gift for?</label>
-		        	<select name="situation">
-		            	<option value="S1">Birthday
-		                <option value="S2">Wedding
-		                <option value="S3">Graduation
-		                <option value="S4">New Job
-		                <option value="S5">Valentine's Day
-		                <option value="S6">Move New Place
-		                <option value="S7">Others
+		        	<select name="situation" id="situation">
+		            	<option id="S1" value="Birthday">Birthday
+		                <option id="S2" value="Wedding">Wedding
+		                <option id="S3" value="Graduation">Graduation
+		                <option id="S4" value="New Job">New Job
+		                <option id="S5" value="Valentine's Day">Valentine's Day
+		                <option id="S6" value="Move New Place">Move New Place
+		                <option id="S7" value="Others">Others
 		            </select>
 		            <label for="relationship" class="select">Who will receive the gift?</label>
-		            <select name="relationship">
-		            	<option value="R1">Friend
-		                <option value="R2">Girl-/Boy-Friend
-		                <option value="R3">Family
-		                <option value="R4">Boss/Professor
-		                <option value="R5">Co-worker
-		                <option value="R6">Others
+		            <select name="relationship" id="relationship">
+		            	<option id="R1" value="Friend">Friend
+		                <option id="R2" value="Girl-/Boy-Friend">Girl-/Boy-Friend
+		                <option id="R3" value="Family">Family
+		                <option id="R4" value="Boss/Professor">Boss/Professor
+		                <option id="R5" value="Co-worker">Co-worker
+		                <option id="R6" value="Others">Others
 		            </select>
 		            <label for="gender" class="select">Tell us more about the receiver...</label>
-		            <select name="gender">
-		            	<option value="G1">Female
-		                <option value="G2">Male
-		                <option value="G3">Choose Not To Tell
+		            <select name="gender" id="gender">
+		            	<option id="G1" value="F">Female
+		                <option id="G2" value="M">Male
+		                <option id="G3" value="N">Choose Not To Tell
 		            </select>
-		            <input type="number" placeholder="Age">
-		            <input type="text" placeholder="Notes: anything you would like to add...">
+		            <input type="number" placeholder="Age" id="age">
+		            <input type="text" placeholder="Notes: anything you would like to add..." id="notes">
 		            <div class="row">
 		            	<input type="submit" value="Post">
 		            	<input type="reset" value="Clear">
