@@ -20,6 +20,10 @@
 			<script type="text/javascript">
 				/* load all open queries on openQuery page */
 				var openQueries,
+				suggest = function(forQueryId) {
+					sessionStorage.forQueryId = forQueryId;
+					sessionStorage.suggestGiftId = "";
+				},
 				/* 	Fetch the openQuery JSON file which consists of no more than 20 queries
 					Should be replaced by AJAX GET request */
 				getOpenQueries = $.getJSON("JSON/openQuery.json", function() {
@@ -30,7 +34,7 @@
 				getOpenQueries.complete(function() {
 					//$("#openQueryCount").append(openQueries.length);
 					for (i = 0; i < openQueries.length; i++) {
-						$("#openquery-list").append('<a href="newSuggestion.html"><li class="item" id="openQuery_' + i + '"></li></a>');
+						$("#openquery-list").append('<a id="' + openQueries[i].queryid + '" href="newSuggestion.html" onclick="suggest(this.id)"><li class="item" id="openQuery_' + i + '"></li></a>');
 						$("#openQuery_" + i).append("<h2>" + openQueries[i].relationship + " " + openQueries[i].situation + "</h2>");
 						$("#openQuery_" + i).append("<p><i class='icon ion-bag'></i>" + openQueries[i].gender + " " + openQueries[i].age + "</p>");
 						$("#openQuery_" + i).append("<p><i class='icon ion-person'></i>" + openQueries[i].notes + "</p>");

@@ -33,6 +33,11 @@
 						  	"suggestionid": sessionStorage.rateSuggestionId,
 						  	"rating": $("input:first").val()
 						};
+						/* $.ajax({
+						  type: "PUT",
+						  url: "",
+						  data: rateSuggestion
+						}); */
 						console.log(rateSuggestion);
 						alert('Rated the suggestion successfully!');
 						$("#rate_form").remove();

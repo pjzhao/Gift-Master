@@ -92,6 +92,11 @@ nav span {
 	width: 100%;
 }
 
+#newSuggestionPage .row a {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
 #newSuggestionPage .row button {
 	margin-top: auto;
 	margin-bottom: auto;
@@ -200,6 +205,10 @@ nav span {
 	margin-top: -22px;
 }
 
+#wishlistPage a {
+	text-decoration: none;
+}
+
 #wishlistPage .list {
 	width: 100%;
 }
@@ -214,6 +223,13 @@ nav span {
 
 #wishlistPage .item .icon {
 	margin-right: 10px;
+}
+
+#wishlistPage #wishlist-add li.item.row.add-gift {
+	padding: 0px;
+	margin-top: -22px;
+	margin-left: 4px;
+}
 }
 
 

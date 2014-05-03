@@ -19,24 +19,32 @@
 	    <div data-role="page" id="editGiftPage">
 	    	<script type="text/javascript">
 				/* load attributes of a certain gift on editGift page */
-				var gift,
-				/* 	Fetch the gift JSON file by giftId
-					Should be replaced by AJAX GET request */
-				getGift = $.getJSON( "JSON/" + sessionStorage.selectedGiftId + ".json", function() {
-					})
-					  .done(function(data) {
-						gift = data
-					  });
-				getGift.complete(function() {
-					$("#giftName").val(gift.giftname);
-					$("#price").val(gift.price);
-					$("#url").val(gift.url);
-					$("#picUrl").val(gift.picUrl);
-				});
+				var gift;
+				if (sessionStorage.selectedGiftId.length > 0) {
+					/* 	Fetch the gift JSON file by giftId
+						Should be replaced by AJAX GET request */
+					getGift = $.getJSON( "JSON/" + sessionStorage.selectedGiftId + ".json", function() {
+						})
+						  .done(function(data) {
+							gift = data
+						  });
+					getGift.complete(function() {
+						$("#giftName").val(gift.giftname);
+						$("#price").val(gift.price);
+						$("#url").val(gift.url);
+						$("#picUrl").val(gift.picUrl);
+					});
+				} else {
+					$("#editGift-head").html("Add New Gift")
+				}
 				$("form").submit(function(event) {
 					if ($("input:first").val() == "") {
-						$("input:first").val(gift.giftname)
-					}
+						if (sessionStorage.selectedGiftId.length > 0) {
+							$("input:first").val(gift.giftname)
+						} else {
+							$("input:first").val("temp_gift_" + Date())
+						}
+					};
 					/* An AJAX POST request should be sent with the data as a JSON newGift, 
 						a new giftid will be generated automatically: */
 					var newGift = {
@@ -45,8 +53,17 @@
 					  	"url": $("#url").val(),
 					  	"picUrl": $("#picUrl").val()
 					};
+					/* $.ajax({
+					  type: "POST",
+					  url: "",
+					  data: newGift
+					}); */
 					console.log(newGift);
-					alert('Edited gift information successfully!');
+					if (sessionStorage.selectedGiftId.length > 0) {
+						alert('Edited gift information successfully!')
+					} else {
+						alert('Added new gift successfully!')
+					}
 				});
 
 			</script>

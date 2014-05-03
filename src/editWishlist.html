@@ -51,18 +51,28 @@
 						  	"wishlistname": $("input:first").val(),
 						  	"privacy": $("select").val()
 						};
+						/* $.ajax({
+						  type: "PUT",
+						  url: "",
+						  data: updateWishlist
+						}); */
 						alert('Edited wishlist successfully!');
 						console.log(updateWishlist);
 					} else {
 						/* An AJAX POST request should be sent with the data as a JSON newWishlist,
 							with a new wishlistid generated automatically: */
 						if ($("input:first").val() == "") {
-							$("input:first").val("temp_" + Date())
+							$("input:first").val("temp_wishlist_" + Date())
 						};
 						var newWishlist = {
 						  	"wishlistname": $("input:first").val(),
 						  	"privacy": $("select").val()
 						};
+						/* $.ajax({
+						  type: "POST",
+						  url: "",
+						  data: newWishlist
+						}); */
 						alert('Added wishlist successfully!');
 						console.log(newWishlist);
 					}

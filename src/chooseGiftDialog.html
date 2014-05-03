@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Gift Master</title>
+		<link href="jquery.mobile.theme-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+		<link href="jquery.mobile.structure-1.3.0.min.css" rel="stylesheet" type="text/css"/>
+		<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+		<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+		<link href="jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+		<link href="lib/css/ionic_select.css" rel="stylesheet" type="text/css">
+		<link href="app.css" rel="stylesheet" type="text/css">
+		<script src="jquery-1.8.3.min.js" type="text/javascript"></script>
+		<script src="jquery.mobile-1.3.0.min.js" type="text/javascript"></script>
+		<script src="jQueryAssets/jquery-ui-1.9.2.button.custom.min.js" type="text/javascript">	
+		</script>
+	</head>
+    <body>
+	    <div data-role="page" id="wishlistPage">
+	    	<script type="text/javascript">
+			    /* load items in a certain wishlist on chooseGift dialog */
+				var wishlist,
+				/* 	Fetch the wishlist JSON file by wishlistId
+					Should be replaced by AJAX GET request */
+				getWishlist = $.getJSON( "JSON/wishlist_" + sessionStorage.selectedWishlistId + ".json", function() {
+					})
+					  .done(function(data) {
+						wishlist = data
+					  });
+				getWishlist.complete(function() {
+					for (i = 0; i < wishlist.items.length; i++) {
+						$("#wishlist-list").append('<a href="newSuggestion.html"><li class="item item-thumbnail-left" id="' + i + '"></li></a>');
+						$("#" + i).append("<img src='" + wishlist.items[i].picUrl + "'>");
+						$("#" + i).append("<h2>" + wishlist.items[i].giftname + "</h2>");
+						$("#" + i).append("<p>$" + wishlist.items[i].price + "</p>");
+						$("#" + i).append("<p>" + wishlist.items[i].url + "</p>");
+						$("#" + i).click(function() {
+							sessionStorage.suggestGiftId=wishlist.items[$(this).attr('id')].giftid;
+							console.log(sessionStorage.suggestGiftId);
+						});
+					}
+				});
+			</script>
+			<div data-role="header" class="head">
+				<h1>Choose a gift</h1>
+			</div>
+			<div data-role="content">	
+		    	<div class="row friend-pic-container">
+		            <div class="list" id="wishlist-list"></div>  	
+		        </div>
+			  	<ul data-role="listview">
+				</ul>	
+			</div>
+		</div>
+    </body>
+</html>

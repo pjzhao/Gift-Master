@@ -29,7 +29,11 @@
 			    	msg = 'Are you sure you want to delete the wishlist?';
 			    	var dlt_confirm = confirm(msg);
 			    	if (dlt_confirm) {
-				    	/* Should send out a DELETE AJAX request to backend with wishlists[index].wishlistid */
+				    	/* Should send out a AJAX DELETE request to backend with wishlists[index].wishlistid */
+				    	/* $.ajax({
+						  type: "DELETE",
+						  url: "#.jsp?wishlistid=" + wishlists[index].wishlistid
+						}); */
 				    	console.log(wishlists[index].wishlistid);
 				    	$("#li_" + wishlists[index].wishlistid).remove();
 				    	console.log(index);	    	
